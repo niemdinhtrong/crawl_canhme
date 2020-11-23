@@ -1,15 +1,15 @@
 [telegram]
-token = 892290879:AAEwZZON16oV5fMDMBBFxofBGzIE2t6Dllc
-chat_id = -290274901
+token = XXXXX
+chat_id = YYYYY
 
 [mysql]
 hostname = 127.0.0.1
 username = canhme
-password = Admin123@
+password = XYXYX
 database = canhme
 
 [sites]
 url_nh = https://canhme.com/nhan-hoa/
 
 [slack]
-url = https://hooks.slack.com/services/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
+url = https://hooks.slack.com/services/T03LF1NNS/BQYU24T9C/socOlhxSHrtLMxJCXYXYXYX

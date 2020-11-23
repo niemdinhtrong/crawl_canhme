@@ -36,7 +36,10 @@ def mysql_write_new_info(sql, url, idsite, token, chat_id, url_slack):
             try:
                 sql.mysql_write_comm(myConnection, idCom, idsite, user_name, Comment, times)
             except:
-                pass
+                try:
+                    sql.mysql_write_comm(myConnection, idCom, idsite, user_name, '', times)
+                except:
+                    sql.mysql_write_comm(myConnection, idCom, idsite, '', '', times)
             text = Comment + "\n" +"Tại link:"+ url
             send_tele(token, chat_id, text)
             send_slack(url_slack, text)

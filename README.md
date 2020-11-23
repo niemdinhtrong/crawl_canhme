@@ -32,8 +32,22 @@ create table site (idsite int NOT NULL AUTO_INCREMENT primary key, links varchar
 create table comment (idcomment char(50) primary key, idsite int, username varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci, nd_comment varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci, times TIMESTAMP);
 ```
 
-Khai báo lại thông tin file `setting`
+Khai báo cấu hình trong file `setting`
+
+```
+vim /var/crawl_canhme/setting
+```
 
 Chạy thử
 
+```
+(venv) [root@nh-canhme crawl_canhme]# python main.py
+```
+
+Thêm vào crontab
+
+```
+(venv) [root@nh-canhme crawl_canhme]# which python
+/root/venv/bin/python
+(venv) [root@nh-canhme crawl_canhme]# echo "*/5 * * * * root /root/venv/bin/python /var/crawl_canhme/main.py" >> /etc/crontab
 ```

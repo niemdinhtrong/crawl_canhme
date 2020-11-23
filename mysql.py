@@ -28,10 +28,10 @@ class mysql(object):
             values.append(value)
         return values
 
-    def mysql_write_comm(self,myConnection, idcomment, idsite, iduser, nd_comment, times):
+    def mysql_write_comm(self,myConnection, idcomment, idsite, username, nd_comment, times):
         mysql = myConnection.cursor()
-        sql = "insert into comment (idcomment, idsite, iduser, nd_comment, times) values ('{}', {}, {}, '{}', '{}')"\
-        .format(idcomment, idsite, iduser, nd_comment, times)
+        sql = "insert into comment (idcomment, idsite, username, nd_comment, times) values ('{}', {}, '{}', '{}', '{}')"\
+        .format(idcomment, idsite, username, nd_comment, times)
         mysql.execute(sql)
         myConnection.commit()
 

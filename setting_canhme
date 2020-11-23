@@ -1,0 +1,10 @@
+[telegram]
+token = 892290879:AAEwZZON16oV5fMDMBBFxofBGzIE2t6Dllc
+chat_id = -390831789
+
+[mysql]
+hostname = 10.10.34.124
+username = new_post
+password = Admin123@
+database = canhme
+

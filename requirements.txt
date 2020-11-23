@@ -1,0 +1,4 @@
+requests==2.22.0
+beautifulsoup4==4.8.1
+PyMySQL==0.9.3
+configparser==4.0.2

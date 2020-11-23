@@ -28,12 +28,6 @@ class mysql(object):
             values.append(value)
         return values
 
-    def mysql_write_user(self,myConnection, user_name):
-        mysql = myConnection.cursor()
-        sql = "insert into user (username) values ('{}')".format(user_name)
-        mysql.execute(sql)
-        myConnection.commit()
-
     def mysql_write_comm(self,myConnection, idcomment, idsite, iduser, nd_comment, times):
         mysql = myConnection.cursor()
         sql = "insert into comment (idcomment, idsite, iduser, nd_comment, times) values ('{}', {}, {}, '{}', '{}')"\

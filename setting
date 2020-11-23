@@ -4,7 +4,7 @@ chat_id = -290274901
 
 [mysql]
 hostname = 127.0.0.1
-username = new_post
+username = canhme
 password = Admin123@
 database = canhme
 

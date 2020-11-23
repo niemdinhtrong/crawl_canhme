@@ -30,13 +30,13 @@ def mysql_write_new_info(sql, url, idsite, token, chat_id, url_slack):
         user_name = beauti.getUser(line)
         idCom = beauti.getidComment(line)
         Comment = beauti.getComment(line)
-        if user_name not in sql.mysql_query(myConnection, "username", "user"):
-            sql.mysql_write_user(myConnection, user_name)
         if idCom not in sql.mysql_query(myConnection, "idcomment", "comment"):
             print(Comment)
             times = datetime.datetime.now()
-            id_user = sql.mysql_get_id(myConnection, "iduser", "user", "username", user_name)
-            sql.mysql_write_comm(myConnection, idCom, idsite, id_user, Comment, times)
+            try:
+                sql.mysql_write_comm(myConnection, idCom, idsite, user_name, Comment, times)
+            except:
+                pass
             text = Comment + "\n" +"Tại link:"+ url
             send_tele(token, chat_id, text)
             send_slack(url_slack, text)
@@ -56,7 +56,7 @@ def NH(url1):
                              config["telegram"]["chat_id"],config["slack"]["url"])
     
 
-config = get_config("/root/code/canhme/setting")
+config = get_config("/var/crawl_canhme/setting")
 sql = mysql.mysql(config["mysql"]["hostname"], config["mysql"]["username"],
                   config["mysql"]["password"], config["mysql"]["database"])
 myConnection = sql.connection()
